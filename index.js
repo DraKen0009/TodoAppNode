@@ -1,10 +1,11 @@
 import express from 'express';
 import {connectDB} from "./db/connectDB.js";
 import todo from "./routes/todo.js";
+import 'dotenv/config';
 
 const app=express()
 const port=process.env.PORT || 8000
-const DATABASE_URL=process.env.DATABASE_URL ||  "mongodb+srv://admin:admin@cluster0.k6xnj4l.mongodb.net/todo"
+const DATABASE_URL=process.env.DATABASE_URL
 
 
 connectDB(DATABASE_URL)
